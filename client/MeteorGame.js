@@ -1,8 +1,8 @@
-var env = {
+env = {
   verbose: true
 };
 
-function logger() {
+logger = function logger() {
   if (env.verbose)
     console.log.apply(console, arguments);
 }
@@ -12,11 +12,12 @@ Template.game.events({
     console.log('focus');
     document.getElementById("hidden-input").focus();
   },
-  'keydown input' : function () {
-    logger("keydown", arguments);
+  'keydown input' : function (event) {
+    logger("keydown", event, event.keyIdentifier);
+    Template.newCharacter.keyPressed(event);
   },
-  'keyup input' : function () {
-    logger("keyup", arguments);
+  'keyup input' : function (event) {
+    logger("keyup", event, event.keyIdentifier);
   }
 });
 

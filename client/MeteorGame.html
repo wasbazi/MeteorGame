@@ -10,5 +10,23 @@
   <h1>Hello World!</h1>
   <input type="type" id="hidden-input">
   <div id="game"></div>
-  <div id="output"></div>
+  <div id="output">
+    {{> newCharacter}}
+  </div>
+</template>
+
+<template name="newCharacter">
+  <h5>Select a character</h5>
+  <div id="character-viewer">
+    <div
+      class="character"
+      style="{{heroPosition}}"></div>
+  </div>
+  <div id="character-selector">
+    {{#forEach characters}}
+      <div
+        class="character {{selectedClass _key}}"
+        style="{{backgroundPosition}}"></div>
+    {{/forEach}}
+  </div>
 </template>
