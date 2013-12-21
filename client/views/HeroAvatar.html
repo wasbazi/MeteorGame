@@ -1,0 +1,9 @@
+<template name="heroAvatar">
+  {{#if _id}}
+    <!--<div class="character" style="{{backgroundPosition}}"></div>-->
+  {{else}}
+    {{#each characters}}
+      <div class="character" style="{{backgroundPosition}}"></div>
+    {{/each}}
+  {{/if}}
+</template>
